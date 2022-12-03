@@ -5,8 +5,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="DayOne/|DayTwo/" kind="src" path="src"/>
+	<classpathentry excluding="DayOne/|DayTwo/|DayThree/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/DayOne"/>
 	<classpathentry kind="src" path="src/DayTwo"/>
+	<classpathentry kind="src" path="src/DayThree"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
