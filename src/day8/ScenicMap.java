@@ -1,5 +1,8 @@
 package day8;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 public class ScenicMap {
 
     private final int[][] area;
@@ -110,10 +113,9 @@ public class ScenicMap {
     public int maxScenicValue() {
         int max = 0;
         for (int[] ints : this.scenicMap) {
-            for (int anInt : ints) {
-                if (anInt > max) {
-                    max = anInt;
-                }
+            OptionalInt x = Arrays.stream(ints).max();
+            if (x.isPresent() && x.getAsInt() > max) {
+                max = x.getAsInt();
             }
         }
 

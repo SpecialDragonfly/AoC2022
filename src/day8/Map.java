@@ -1,14 +1,10 @@
 package day8;
 
 public class Map {
-    private int width;
-    private int height;
 
     private int[][] area;
 
     public Map(int width, int height) {
-        this.width = width;
-        this.height = height;
         this.area = new int[height][width];
     }
 
@@ -22,16 +18,16 @@ public class Map {
     }
 
     public void output() {
-        for (int i = 0; i < this.area.length; i++) {
-            for (int j = 0; j < this.area[i].length; j++) {
-                System.out.print(this.area[i][j]);
+        for (int[] ints : this.area) {
+            for (int anInt : ints) {
+                System.out.print(anInt);
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
     public int visible() {
-        int count = this.width*2 + ((this.height - 2) * 2);
+        int count = this.area[0].length * 2 + ((this.area.length - 2) * 2);
         for (int i = 1; i < this.area.length - 1; i++) {
             for (int j = 1; j < this.area[i].length - 1; j++) {
                 if (this.pointVisible(i, j)) {
