@@ -18,17 +18,13 @@ public class Machine {
 
     public void runCommand(CommandInterface command) {
         int commandCycles = command.getCycles();
-        //System.out.println("Begin executing " + command.toString());
         for (int i = 0; i < commandCycles; i++) {
-            //System.out.println("Drawing at pixel " + this.cycle);
             this.display.draw(this.cycle, this.register);
             this.cycle++;
-            //this.display.output();
         }
         if (command instanceof Addx) {
             this.register = this.register + ((Addx) command).getNumberToAdd();
         }
-        //System.out.println("Finish executing " + command.toString() + " Register is now " + this.register);
     }
 
     public void draw() {
