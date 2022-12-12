@@ -7,7 +7,9 @@ import day11.Operations.Square;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Vector;
+import java.util.stream.Collectors;
 
 public class DayEleven {
     public static void main(String[] args) {
@@ -64,26 +66,14 @@ public class DayEleven {
         }
         monkeys.add(monkey);
 
-        int maxRounds = 10000;
-
-        System.out.println(System.currentTimeMillis());
-        long time = System.currentTimeMillis();
-        for (int rounds = 0; rounds < maxRounds; rounds++) {
+        for (int rounds = 0; rounds < 10000; rounds++) {
             for (int i = 0; i < monkeys.size(); i++) {
                 monkeys.get(i).inspectItem(monkeys);
             }
-            if (rounds % 1000 == 0) {
-                System.out.println("Round " + rounds + " @ " + (System.currentTimeMillis() - time));
-                time = System.currentTimeMillis();
-                for (int i = 0; i < monkeys.size(); i++) {
-                    System.out.println("Monkey " + i + " has inspected " + monkeys.get(i).getInspectionCount() + " items.");
-                }
-                System.out.println("----------------");
-            }
         }
+;
         for (int i = 0; i < monkeys.size(); i++) {
             System.out.println("Monkey " + i + " has inspected " + monkeys.get(i).getInspectionCount() + " items.");
         }
-
     }
 }
