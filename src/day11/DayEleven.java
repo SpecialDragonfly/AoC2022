@@ -7,9 +7,7 @@ import day11.Operations.Square;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Vector;
-import java.util.stream.Collectors;
 
 public class DayEleven {
     public static void main(String[] args) {
