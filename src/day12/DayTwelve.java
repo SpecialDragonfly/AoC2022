@@ -10,6 +10,9 @@ public class DayTwelve {
             map.addRow(i, data.get(i));
         }
 
-        map.output();
+        map.run();
+        System.out.println("-----------");
+        map.runPart2();
+        //map.output();
     }
 }
